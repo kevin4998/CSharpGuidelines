@@ -16,7 +16,7 @@ for all C# versions up to 7.3
 </div>
 <br/>
 <div class="author">
-Dennis Doomen<br/>
+Dennis Doomen and Kevin Westerbaan<br/>
 Version %semver%<br/>
 %commitdate%
 </div>

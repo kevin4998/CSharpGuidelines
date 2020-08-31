@@ -19,11 +19,13 @@ NOTE: Requires Markdown Extra. See http://michelf.ca/projects/php-markdown/extra
 <div markdown="1" class="sidebar">
 **Basic Principles**
 
-* The Principle of Least Surprise
-* Keep It Simple Stupid
-* You Ain't Gonna Need It
-* Don't Repeat Yourself
-* OOP: Encapsulation, abstraction, inheritance, polymorphism
+* [The Principle of Least Surprise](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
+* [Keep It Simple Stupid](https://en.wikipedia.org/wiki/KISS_principle)
+* [You Ain't Gonna Need It](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)
+* [Don't Repeat Yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+* [OOP: Encapsulation, abstraction, inheritance, polymorphism](https://en.wikipedia.org/wiki/Object-oriented_programming)
+* [General Responsibility Assignment Software Principles](https://en.wikipedia.org/wiki/GRASP_(object-oriented_design))
+* SOLID: [Single-Responsibility](https://en.wikipedia.org/wiki/Single-responsibility_principle), [Open-Closed](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle), [Liskow Substitution](https://en.wikipedia.org/wiki/Liskov_substitution_principle), [Interface Segregation](https://en.wikipedia.org/wiki/Interface_segregation_principle), [Dependency Inversion](https://en.wikipedia.org/wiki/Dependency_inversion_principle) Principle.
 </div>
 
 **Class Design**
@@ -71,7 +73,7 @@ NOTE: Requires Markdown Extra. See http://michelf.ca/projects/php-markdown/extra
 * Make all members `private` and types `internal sealed` by default ({{ site.default_rule_prefix }}1501)
 * Avoid conditions with double negatives ({{ site.default_rule_prefix }}1502)
 * Don't use "magic" numbers ({{ site.default_rule_prefix }}1515)
-* Only use `var` when the type is very obvious ({{ site.default_rule_prefix }}1520)
+* Only use `var` as the result of a LINQ query ({{ site.default_rule_prefix }}1520)
 * Declare and initialize variables as late as possible ({{ site.default_rule_prefix }}1521)
 * Assign each variable in a separate statement ({{ site.default_rule_prefix }}1522)
 * Favor object and collection initializers over separate statements ({{ site.default_rule_prefix }}1523)
@@ -147,9 +149,9 @@ NOTE: Requires Markdown Extra. See http://michelf.ca/projects/php-markdown/extra
 | Enum                                  | `ErrorLevel`                                                |
 | Enum member                           | `FatalError`                                                |
 | Resource key                          | `SaveButtonTooltipText`                                     |
-| Constant field                        | `MaximumItems`                                              |
-| Private static readonly field         | `RedValue`                                                  |
-| Non-private field                     | `MainPanel`                                                 |
+| Constant field                        | `maximumItems`                                              |
+| Private static readonly field         | `redValue`                                                  |
+| Non-private field                     | `mainPanel`                                                 |
 | Property                              | `BackColor`                                                 |
 | Event                                 | `Click`                                                     |
 | Method                                | `ToString`                                                  |
@@ -192,8 +194,8 @@ NOTE: Requires Markdown Extra. See http://michelf.ca/projects/php-markdown/extra
 
 **Layout**
 
-* Maximum line length is 130 characters
-* Indent 4 spaces, don't use tabs
+* Maximum line length is 80 characters
+* Always use tabs for indentation not 4 spaces.
 * Keep one space between keywords like `if` and the expression, but don't add spaces after `(` and before `)`
 * Add a space around operators, like `+`, `-`, `==`, etc.
 * Always add curly braces after the keywords `if`, `else`, `do`, `while`, `for`, `foreach` and `case` ({{ site.default_rule_prefix }}1535)
@@ -205,7 +207,7 @@ NOTE: Requires Markdown Extra. See http://michelf.ca/projects/php-markdown/extra
 * Remove redundant parentheses in expressions if they do not clarify precedence; add parentheses in expressions to avoid non-obvious precedence
 <br/>
 
-* Do not use `#region` ({{ site.default_rule_prefix }}2407)
+* Identify `#region` levels with `-`-symbols and use sparsly ({{ site.default_rule_prefix }}2407)
 * Use expression-bodied members appropriately ({{ site.default_rule_prefix }}2410)
 </td>
 <td class="column">
@@ -223,14 +225,14 @@ NOTE: Requires Markdown Extra. See http://michelf.ca/projects/php-markdown/extra
 <div class="sidebar">
 **Member order**
 
-1. Private fields and constants
-2. Public constants
-3. Public static readonly fields
-4. Factory methods
-5. Constructors and the finalizer
-6. Events
-7. Public properties
-8. Other methods and private properties in calling order
+1. Public constants
+2. Public static read-only fields
+3. Private fields and constants
+4. Public properties
+5. Constructors
+6. Factory methods and the finalizer
+7. Other methods and private properties in calling order
+8. Events 
 </div>
 
 <td/>
@@ -239,7 +241,7 @@ NOTE: Requires Markdown Extra. See http://michelf.ca/projects/php-markdown/extra
 <table width="100%" class="footer">
 <tr>
  <td>
-   Dennis Doomen
+   Dennis Doomen & Kevin Westerbaan
    Version %semver% (%commitdate%)
  </td>
  <td style="text-align:right">
